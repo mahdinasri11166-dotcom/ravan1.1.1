@@ -114,17 +114,6 @@ fun AboutScreen(onBack: () -> Unit) {
                     )
                 }
 
-                SoftCard(modifier = Modifier.fillMaxWidth()) {
-                    Text("تغییرات نسخه‌ها", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                    Spacer(Modifier.height(8.dp))
-                    AppChangelog.entries.take(3).forEach { entry ->
-                        Text("نسخه ${entry.version}", fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.primary)
-                        entry.items.forEach { line ->
-                            Text("• $line", style = MaterialTheme.typography.bodyMedium)
-                        }
-                        Spacer(Modifier.height(10.dp))
-                    }
-                }
 
                 SoftCard(modifier = Modifier.fillMaxWidth()) {
                     Text("چرا درمانگرنو؟",
