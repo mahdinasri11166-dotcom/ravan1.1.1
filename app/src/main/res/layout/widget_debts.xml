@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_debts_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B45309"
+    android:orientation="vertical"
+    android:padding="12dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="درمانگرنو"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/widget_debts_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="بدهی‌ها"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/widget_debts_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="—"
+        android:textColor="#FEF3C7"
+        android:textSize="13sp" />
+</LinearLayout>
