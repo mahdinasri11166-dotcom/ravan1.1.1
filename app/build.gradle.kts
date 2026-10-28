@@ -20,11 +20,10 @@ android {
         vectorDrawables { useSupportLibrary = true }
     }
 
-    // این بخش اصلاح شد
     signingConfigs {
         create("release") {
-            // آدرس فایل کلید در گیت‌هاب
-            val ksFile = rootProject.file("app/darmanagarno-release.jks")
+            // آدرس فایل کلید جدید که باید توسط گیت‌هاب ساخته شود
+            val ksFile = rootProject.file("app/darmanagarno-new.jks")
             if (ksFile.exists()) {
                 storeFile = ksFile
                 storePassword = System.getenv("DMN_STORE_PASSWORD") ?: ""
@@ -39,7 +38,6 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
-            // از تنظیمات بالا استفاده کن
             signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
