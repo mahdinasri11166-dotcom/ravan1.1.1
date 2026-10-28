@@ -20,13 +20,17 @@ android {
         vectorDrawables { useSupportLibrary = true }
     }
 
+    // این بخش اصلاح شد
     signingConfigs {
         create("release") {
-            // اولویت با متغیر محیطی / GitHub Secrets — در غیر این صورت مقادیر محلی پروژه
-            storeFile = file("darmanagarno-release.jks")
-            storePassword = System.getenv("DMN_STORE_PASSWORD") ?: "GolSorkh-Release-58"
-            keyAlias = System.getenv("DMN_KEY_ALIAS") ?: "darmanagarno"
-            keyPassword = System.getenv("DMN_KEY_PASSWORD") ?: "GolSorkh-Release-58"
+            // آدرس فایل کلید در گیت‌هاب
+            val ksFile = rootProject.file("app/darmanagarno-release.jks")
+            if (ksFile.exists()) {
+                storeFile = ksFile
+                storePassword = System.getenv("DMN_STORE_PASSWORD") ?: ""
+                keyAlias = System.getenv("DMN_KEY_ALIAS") ?: ""
+                keyPassword = System.getenv("DMN_KEY_PASSWORD") ?: ""
+            }
         }
     }
 
@@ -35,6 +39,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
+            // از تنظیمات بالا استفاده کن
             signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
